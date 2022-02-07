@@ -28,12 +28,5 @@ router.route('/members/:id').get((req,res)=>{
   
 })
 
-router.route('/members').post((req,res)=>{
-  let member = {...req.body};
-  DbUtils.addMember(member).then(result =>{
-    res.status(201).json(result);
-  })
-  
-})
 
 module.exports = router;

@@ -9,6 +9,7 @@ const { request } = require('http');
 
 const app = express();
 const main = require('./routes/index');
+const create = require('./routes/create');
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
@@ -28,6 +29,7 @@ setUpNunjucks();
 
 app.use(cors());
 app.use('/', main);
+app.use('/create', create);
 
 
 
