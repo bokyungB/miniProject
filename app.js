@@ -3,6 +3,7 @@ const express = require('express');
 const nunjucks = require("nunjucks");
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const dateFilter = require('nunjucks-date-filter');
 
 const { request } = require('http');
 
@@ -13,18 +14,24 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/public'));
-app.set("view engine", "html"); 
-nunjucks.configure("views", {
-    express: app,
-    watch: true
-});
+app.set("view engine", "html");
+
+function setUpNunjucks() {
+
+    let env = nunjucks.configure("views", {
+        express: app,
+        watch: true
+    });
+    env.addFilter('date', dateFilter);
+};
+setUpNunjucks();
 
 app.use(cors());
 app.use('/', main);
 
 
 
-const port = process.env.PORT || 8090;
+const port = process.env.PORT || 8080;
 app.listen(port);
 console.log('Member API is running at '+port);
 
