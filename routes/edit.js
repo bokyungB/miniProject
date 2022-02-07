@@ -21,4 +21,13 @@ router.route('/').get((req,res)=>{
   };
 })
 
+router.post('/',(req,res)=>{
+  let member = {...req.body};
+  DbUtils.editMember(member).then(result =>{
+    res.status(201).redirect('/');
+  }).catch(error => {
+    console.log(error);
+    })
+})
+
 module.exports = router;

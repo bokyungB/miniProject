@@ -15,16 +15,17 @@ router.use((req,res,next)=>{
 router.route('/').get((req,res)=>{
   DbUtils.getMembers().then(result =>{
     res.render('../views/index.html',{sample_data:result[0]});
-    console.log(result);
+
     // res.json(result[0]);
   }).catch(error => {console.log(error);})
   
 })
 
-router.route('/members/:id').get((req,res)=>{
-  DbUtils.getMember(req.params.id).then(result =>{
-    res.json(result[0]);
-  })
+router.route('/member_id=:id').get((req,res)=>{
+  let memberId = req.params.id
+  DbUtils.getMember(memberId).then(result =>{
+    res.render('../views/index.html',{sample_data:result[0]});
+  }).catch(error => {console.log(error);})
   
 })
 

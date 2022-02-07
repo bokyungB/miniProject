@@ -14,6 +14,7 @@ async function getMembers(){
 async function getMember(memberId){
   try{
     let pool = await sql.connect(config);
+    console.log("getmember: ", memberId)
     let member = await pool.request()
             .input('input_parameter',sql.VarChar, memberId)
             .query("select * from member where member_id = @input_parameter");

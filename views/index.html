@@ -27,10 +27,12 @@
             <li><a href="/edit" target="_blank" class="btnEdit btn">편집</a></li>
             <li><a href="javascript:void(0)" class="btnDelet btn">삭제</a></li>
           </ul>
+          <form id="member-search" action="/:id" method="GET">
           <div class="search">
-            <input type="text" class="id-search" />
+            <input type="text" class="id-search" name="member_id" placeholder="member id 검색"/>
             <div class="material-icons-outlined">search</div>
           </div>
+        </form>
         </div>
 
         <div class="admin-table">
@@ -62,6 +64,6 @@
       </div>
   </form>
 </section>
-<div>test(1)</div>
+
 </body>
 </html>
