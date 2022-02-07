@@ -1,0 +1,217 @@
+/* COMMOM */
+body {
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: 'Nanum Gothic Coding', monospace;
+}
+a {
+  text-decoration: none;
+}
+.btn {
+  width: 40px;
+  padding: 2px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  color: #333;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  box-sizing: border-box;
+  transition: .4s ;
+}
+.btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+.btn.btn--reverse {
+  background-color: #333;
+  color: #fff;
+}
+.btn.btn--reverse:hover {
+  background-color: transparent;
+  color: #333;
+}
+.admin-form {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.admin-content {
+  position: relative; 
+  width: calc(100% - 20px); 
+  margin: 0 auto; 
+  padding: 10px; 
+  height: calc(100vh - 50px); 
+  overflow-y: auto; 
+  border-bottom: 10px solid #ecf0f5;
+  background: #fff;
+}
+
+/* MENU */
+.admin-title {
+  height: 50px;
+  line-height: 50px; 
+  padding: 0px 10px; 
+  color: #656565; 
+}
+.admin-title em {
+  font-size: 18px; 
+  color: #656565; 
+  font-weight: bold; 
+  padding-right: 10px;
+}
+.admin-head {
+  position: relative;
+  top: 10px;
+  left: 0;
+  display: flex;
+  border-bottom: 2px solid #e5e5e5;
+}
+.admin-head ul.head__menu {
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+.admin-head ul.head__menu li {
+  position: relative;
+}
+.admin-head ul.head__menu li::before {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 26px;
+  background-color: #e5e5e5;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.admin-head ul.head__menu li:first-child:before {
+  display: none;
+}
+.admin-head ul.head__menu li a {
+  font-size: 18px;
+  padding: 0px 10px;
+  display: block;
+  color: #656565;
+}
+.admin-head ul.head__menu li a:hover {
+  color: #e5e5e5;
+  background-color: #777;
+}
+
+.admin-edit {
+  position: relative;
+  top: 15px;
+  left: 0;
+  display: flex;
+  border-bottom: 2px solid #e5e5e5;
+}
+.admin-edit ul.edit__btn {
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+.admin-edit ul.edit__btn li {
+  position: relative;
+  padding: 2px 4px;
+}
+.admin-edit .search {
+  height: 30px;
+  position: absolute;
+  right: 0px;
+}
+.admin-edit .search input {
+  width: 160px;
+  height: 28px;
+  padding: 4px 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #777;
+  font-size: 14px;
+}
+.admin-edit .search .material-icons-outlined {
+  height: 28px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 5px;
+  margin: auto;
+  transition: .4s;
+}
+.admin-edit .search.focused .material-icons-outlined {
+  opacity: 0;
+}
+
+/* TABLE */
+.admin-table {
+  width: 100%;
+  margin-top: 30px;
+}
+.admin-table #memberTable {
+  width: 100%;
+}
+.admin-table #memberTable thead th {
+  padding: 5px; 
+  background: #e0e0e0; 
+  border: 1px solid #222; 
+  cursor: pointer; 
+  text-align: left;
+}
+.admin-table #memberTable th.select {
+  width: 70px;
+}
+.admin-table tbody tr {
+  border-bottom: 1px solid #222;
+}
+.admin-table tbody td {
+  padding: 5px;
+   font-size: 14px;
+}
+
+
+/* pop-up */
+.pop-up {
+  width: 400px;
+  background: #fff; 
+  position: fixed; 
+  border: 1px solid #222;
+}
+.pop-up h3 {
+  padding: 5px 0; 
+  text-align: center; 
+  background: #777; 
+  color: #fff;
+}
+.pop-head {
+  padding: 10px 5px;
+}
+.pop-head h4 {
+  font-size: 16px; 
+  font-weight: bold;
+}
+.pop-head h5 {
+  font-size: 14px;
+}
+.pop-info {display: flex; 
+  margin-left: 10px; 
+  margin-bottom: 5px;
+}
+.pop-info label {
+  width: 150px; 
+  text-transform: capitalize;
+}
+.pop-info input {
+  width: 160px;
+}
+.pop-btns {
+  display: flex; 
+  justify-content: flex-end; 
+  border-top: 1px solid #222; 
+  margin-top: 10px; 
+  padding: 5px;
+}
