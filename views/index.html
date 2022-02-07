@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+{% include "./layout/head_meta.html" %}
+</head>
+<body>
+
+<section class="admin">
+  <form action="" class="admin-form">
+    <h2 class="admin-title"><em>사용자 관리</em> 권한관리</h2>
+      <div class="admin-content">
+        <div class="admin-head">
+          <ul class="head__menu">
+            <li><a href="javascript:void(0)">사용자 조회</a></li>
+            <li><a href="javascript:void(0)">멤버 조회</a></li>
+            <li><a href="javascript:void(0)">아이템 조회</a></li>
+            <li><a href="javascript:void(0)">프로젝트 조회</a></li>
+            <li><a href="javascript:void(0)">멤버 사용자 관리</a></li>
+            <li><a href="javascript:void(0)">멤버 아이템 관리</a></li>
+            <li><a href="javascript:void(0)">프로젝트 사용자 관리</a></li>
+          </ul>
+        </div>
+
+        <div class="admin-edit">
+          <ul class="edit__btn">
+            <li><a href="/create" target="_blank" class="btnCreate btn">생성</a></li>
+            <li><a href="/edit" targer="_blank" class="btnEdit btn">편집</a></li>
+            <li><a href="javascript:void(0)" class="btnDelet btn">삭제</a></li>
+          </ul>
+          <div class="search">
+            <input type="text" class="id-search" />
+            <div class="material-icons-outlined">search</div>
+          </div>
+        </div>
+
+        <div class="admin-table">
+          <table id="memberTable">
+            <thead>
+                <tr>
+                    <th class="select">Select</th>
+                    <th>Member id <i class="fas fa-caret-up"></i></th>
+                    <th>member name <i class="fas fa-caret-up"></i></th>
+                    <th>Valid date from <i class="fas fa-caret-up"></i></th>
+                    <th>Valid date to <i class="fas fa-caret-up"></i></th>
+                </tr>
+            </thead>
+            <tbody id="target">
+            {% for data in sample_data %}
+                <tr>
+                    <td><input type="checkbox" id="{{data.member_id}}"></td>
+                    <td>{{data.member_id}}</td>
+                    <td>{{data.member_name}}</td>
+                    <td>{{data.valid_date_from}}</td>
+                    <td>{{data.valid_date_to}}</td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+  </form>
+</section>
+
+</body>
+</html>
