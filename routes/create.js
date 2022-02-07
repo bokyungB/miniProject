@@ -11,12 +11,20 @@ router.use((req,res,next)=>{
   next();
 })
 
-router.route('/').post((req,res)=>{
-  let member = {...req.body};
-  DbUtils.addMember(member).then(result =>{
-    res.status(201).json(result);
-  }).catch(error => {console.log(error);})
+// router.route('/').post((req,res)=>{
+//   let member = {...req.body};
+//   DbUtils.addMember(member).then(result =>{
+//     res.status(201).json(result);
+//   }).catch(error => {console.log(error);})
   
+// })
+router.route('/').get((req,res)=>{
+  try{
+    res.render('../views/create.html')
+  }catch(error){
+    console.log("createrror")
+
+  };
 })
 
 module.exports = router;
