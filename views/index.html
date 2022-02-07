@@ -50,8 +50,8 @@
                     <td><input type="checkbox" id="{{data.member_id}}"></td>
                     <td>{{data.member_id}}</td>
                     <td>{{data.member_name}}</td>
-                    <td>{{data.valid_date_from}}</td>
-                    <td>{{data.valid_date_to}}</td>
+                    <td>{{data.valid_date_from | date("YYYY-MM-DD")}}</td>
+                    <td>{{data.valid_date_to | date("YYYY-MM-DD")}}</td>
                 </tr>
             {% endfor %}
 
