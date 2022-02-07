@@ -1,3 +1,4 @@
+"use strict";
 class Member{
   constructor(member_id,member_name,valid_date_from,valid_date_to){
     this.member_id = member_id;
