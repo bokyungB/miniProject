@@ -10,6 +10,7 @@ const { request } = require('http');
 const app = express();
 const main = require('./routes/index');
 const create = require('./routes/create');
+const edit = require('./routes/edit');
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
@@ -30,6 +31,7 @@ setUpNunjucks();
 app.use(cors());
 app.use('/', main);
 app.use('/create', create);
+app.use('/edit', edit);
 
 
 
